@@ -1,0 +1,47 @@
+<mat-card>
+  <form (submit)="onAddPost(postForm)" #postForm="ngForm">
+    <mat-form-field>
+      <input
+      matInput type="text"
+      name="title"
+      ngModel
+      required
+      minlength="3"
+      placeholder= "Post Title"
+      #title="ngModel">
+      <mat-error *ngIf="title.invalid">Please enter a post title</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <textarea
+      matInput
+      rows="6"
+      name="content"
+      ngModel
+      required
+      placeholder="Post Content"
+      #content="ngModel">
+      </textarea>
+      <mat-error *ngIf="content.invalid">Please enter content</mat-error>
+      </mat-form-field
+    ><br />
+    <button
+    mat-raised-button
+    color="accent"
+    type="submit">
+    Save post
+    </button>
+  </form>
+</mat-card>
+<!-- using the [(ngModel)] makes a two-way binding where itll update the variable based on input -->
+
+<!-- <textarea rows="6" [value]="newPost" #postInput></textarea> -->
+
+<!-- using # creates a marker you can reference later -->
+<!-- can use value if it is a property and can wrap it in square brackets
+to directly target the value property of the target and bind the value
+b/w quotation marks to it so "Test" would mean look for property named test
+of your component. to output a string test must also put it in single quotes-->
+<br />
+<!-- the (click) is a listener. typically you use on click or something with on or mouse -->
+
+<!-- <p>{{ newPost }}</p> -->
