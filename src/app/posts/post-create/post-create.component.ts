@@ -4,13 +4,13 @@ import { PostsService } from '../posts.service';
 
 
 @Component({
-  selector: 'app-post-create',
-  templateUrl: './post-create.component.html',
-  styleUrls: ['./post-create.component.css']
+  selector: "app-post-create",
+  templateUrl: "./post-create.component.html",
+  styleUrls: ["./post-create.component.css"]
 })
 export class PostCreateComponent {
-  enteredContent = '';
-  enteredTitle = '';
+  enteredContent = "";
+  enteredTitle = "";
   // @Output() postCreated = new EventEmitter<Post>()
 
   constructor(public postsService: PostsService) {}
@@ -27,7 +27,7 @@ export class PostCreateComponent {
     //   content: form.value.content
     // };
     // this.postCreated.emit(post)
-    this.postsService.addPost(form.value.title,form.value.content)
+    this.postsService.addPost(form.value.title, form.value.content)
     form.resetForm();
   }
 }
